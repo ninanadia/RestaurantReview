@@ -1,0 +1,62 @@
+package com
+
+import com.google.gson.annotations.SerializedName
+
+//merupakan class model yang berfungsi untuk menampung data dari JSON
+//dan menggunakan GSON untuk representasi data
+data class RestaurantResponse(
+
+	@field:SerializedName("restaurant")
+	val restaurant: Restaurant,
+
+	@field:SerializedName("error")
+	val error: Boolean,
+
+	@field:SerializedName("message")
+	val message: String
+)
+
+data class Restaurant(
+
+	@field:SerializedName("customerReviews")
+	val customerReviews: List<CustomerReviewsItem>,
+
+	@field:SerializedName("pictureId")
+	val pictureId: String,
+
+	@field:SerializedName("name")
+	val name: String,
+
+	@field:SerializedName("rating")
+	val rating: Double,
+
+	@field:SerializedName("description")
+	val description: String,
+
+	@field:SerializedName("id")
+	val id: String
+)
+
+data class CustomerReviewsItem(
+
+	@field:SerializedName("date")
+	val date: String,
+
+	@field:SerializedName("review")
+	val review: String,
+
+	@field:SerializedName("name")
+	val name: String
+)
+
+data class PostReviewResponse(
+
+	@field:SerializedName("customerReviews")
+	val customerReviews: List<CustomerReviewsItem>,
+
+	@field:SerializedName("error")
+	val error: Boolean,
+
+	@field:SerializedName("message")
+	val message: String
+)
